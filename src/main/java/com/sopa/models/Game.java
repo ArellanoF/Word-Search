@@ -9,7 +9,7 @@ public class Game {
 	private int duration;
 	private int score;
 	private User user;
-	private int duration;
+	
 	
 	
 
@@ -67,15 +67,5 @@ public class Game {
 		return "Game [idGame=" + idGame + ", date=" + date + ", duration=" + duration + ", score=" + score + ", user="
 				+ user + "]";
 	}
-
-	public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-
-
 	
 }
