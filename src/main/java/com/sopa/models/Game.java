@@ -3,10 +3,12 @@ package com.sopa.models;
 import java.time.LocalDate;
 
 public class Game {
+	
 	private int idGame;
 	private LocalDate date;
 	private int score;
 	private User user;
+	private int duration;
 	
 	
 
@@ -53,6 +55,14 @@ public class Game {
 	@Override
 	public String toString() {
 		return "Game [idGame=" + idGame + ", date=" + date + ", score=" + score + ", user=" + user + "]";
+	}
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
 	}
 
 
