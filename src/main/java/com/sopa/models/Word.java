@@ -1,18 +1,18 @@
-package com.sopa.clases;
+package com.sopa.models;
 
-public class word {
+public class Word {
 	
 	private int idWord;
-
 	private String word;
 	
+	
 
-	public word(String word, int idWord) {
+	public Word(int idWord, String word) {
 		super();
 		this.idWord = idWord;
 		this.word = word;
-		
 	}
+
 	public synchronized int getIdWord() {
 		return idWord;
 	}
@@ -31,12 +31,8 @@ public class word {
 
 	@Override
 	public String toString() {
-		return "word [idWord=" + idWord + ", word=" + word + "]";
+		return "Word [idWord=" + idWord + ", word=" + word + "]";
 	}
-
-
-
-	
 	
 	
 }
