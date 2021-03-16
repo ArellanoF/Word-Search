@@ -6,16 +6,18 @@ public class Game {
 	
 	private int idGame;
 	private LocalDate date;
+	private int duration;
 	private int score;
 	private User user;
 	private int duration;
 	
 	
 
-	public Game(int idGame, LocalDate date, int score, User user) {
+	public Game(int idGame, LocalDate date,int duration,  int score, User user) {
 		super();
 		this.idGame = idGame;
 		this.date = date;
+		this.duration = duration;
 		this.score = score;
 		this.user = user;
 	}
@@ -52,9 +54,18 @@ public class Game {
 		this.user = user;
 	}
 
+	public synchronized int getDuration() {
+		return duration;
+	}
+
+	public synchronized void setDuration(int duration) {
+		this.duration = duration;
+	}
+
 	@Override
 	public String toString() {
-		return "Game [idGame=" + idGame + ", date=" + date + ", score=" + score + ", user=" + user + "]";
+		return "Game [idGame=" + idGame + ", date=" + date + ", duration=" + duration + ", score=" + score + ", user="
+				+ user + "]";
 	}
 
 	public int getDuration() {
