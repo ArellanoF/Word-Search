@@ -5,14 +5,16 @@ import java.util.List;
 public class User {
 	private int idUsername;
 	private String username;
+	private int duration;
 	private List<Game> games;
 	
 	
 	
-	public User(int idUsername, String username, List<Game> games) {
+	public User(int idUsername, String username, int duration,  List<Game> games) {
 		super();
 		this.idUsername = idUsername;
 		this.username = username;
+		this.duration = duration;
 		this.games = games;
 	}
 
@@ -41,13 +43,19 @@ public class User {
 		this.games = games;
 	}
 
-	@Override
-	public String toString() {
-		return "User [idUsername=" + idUsername + ", username=" + username + ", games=" + games + "]";
+	public synchronized int getDuration() {
+		return duration;
 	}
 
+	public synchronized void setDuration(int duration) {
+		this.duration = duration;
+	}
 
-
+	@Override
+	public String toString() {
+		return "User [idUsername=" + idUsername + ", username=" + username + ", duration=" + duration + ", games="
+				+ games + "]";
+	}
 
 	
 }
