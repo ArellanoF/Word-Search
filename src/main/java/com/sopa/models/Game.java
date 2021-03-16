@@ -3,11 +3,13 @@ package com.sopa.models;
 import java.time.LocalDate;
 
 public class Game {
+	
 	private int idGame;
 	private LocalDate date;
 	private int duration;
 	private int score;
 	private User user;
+	private int duration;
 	
 	
 
@@ -66,7 +68,14 @@ public class Game {
 				+ user + "]";
 	}
 
-	
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
 
 	
 }
