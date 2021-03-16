@@ -1,10 +1,21 @@
-package com.sopa.clases;
+package com.sopa.models;
 
-public class user {
+import java.util.List;
+
+public class User {
 	private int idUsername;
 	private String username;
-	private String password;
+	private List<Game> games;
 	
+	
+	
+	public User(int idUsername, String username, List<Game> games) {
+		super();
+		this.idUsername = idUsername;
+		this.username = username;
+		this.games = games;
+	}
+
 	public synchronized int getIdUsername() {
 		return idUsername;
 	}
@@ -22,25 +33,21 @@ public class user {
 		this.username = username;
 	}
 
-	public synchronized String getPassword() {
-		return password;
+	public synchronized List<Game> getGames() {
+		return games;
 	}
 
-	public synchronized void setPassword(String password) {
-		this.password = password;
+	public synchronized void setGames(List<Game> games) {
+		this.games = games;
 	}
-
-	public user(int idUsername, String username, String password) {
-		super();
-		this.idUsername = idUsername;
-		this.username = username;
-		this.password = password;
-	}
-	
 
 	@Override
 	public String toString() {
-		return "user [idUsername=" + idUsername + ", username=" + username + ", password=" + password + "]";
+		return "User [idUsername=" + idUsername + ", username=" + username + ", games=" + games + "]";
 	}
+
+
+
+
 	
 }
