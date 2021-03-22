@@ -1,15 +1,28 @@
 package com.sopa.app;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController
+
+@Controller
 public class HomeController {
 
-  @GetMapping("/")
-  public String index() {
-    return "Welcome to the home page!";
-  }
+	 @RequestMapping("/login")
+	    public String login() {         
+	        return "login";
+	    }
+	 @RequestMapping("/denied")
+	    public String denied() {         
+	        return "error";
+	    }
+	  @RequestMapping("/new-game")
+	    public String newGame() {         
+	        return "new-game";
+	    }
+	  @RequestMapping("/game")
+	    public String game() {         
+	        return "game";
+	    }
 
 }

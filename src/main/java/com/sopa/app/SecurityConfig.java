@@ -12,11 +12,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http
-      .authorizeRequests()
-        .anyRequest().fullyAuthenticated()
-        .and()
-      .formLogin();
+	  http.csrf().disable().authorizeRequests()
+          .and().formLogin().loginPage("/login").permitAll()
+          .defaultSuccessUrl("/new-game", true)
+          .failureUrl("/login?error=true");
+
   }
 
   @Override
