@@ -9,8 +9,7 @@ public class Game {
 	private int duration;
 	private int score;
 	private User user;
-	private int duration;
-	
+
 	
 
 	public Game(int idGame, LocalDate date,int duration,  int score, User user) {
@@ -68,13 +67,6 @@ public class Game {
 				+ user + "]";
 	}
 
-	public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
 
 
 	
