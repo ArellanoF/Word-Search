@@ -18,7 +18,7 @@ public class SQLWordDAO implements WordDAO {
 
 	final String INSERT= "INSERT INTO word(idWord, word) VALUES (?, ?)";
 	final String UPDATE= "UPDATE word SET idWord = ?, word = ? WHERE idWord = ?";
-	final String DELETE= "DELETE FROM word WHERE idWord 0 ?";
+	final String DELETE= "DELETE FROM word WHERE idWord = ?";
 	final String DELETEALL= "DELETE FROM word";
 	final String GETALL = "SELECT * FROM word";
 	final String GETONE = "SELECT * FROM word WHERE idWord = ?";
