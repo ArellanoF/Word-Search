@@ -170,6 +170,28 @@ public class SQLWordDAO implements WordDAO {
 			}
 		}
 		
+	}
+
+	@Override
+	public void deleteAll() throws DAOException {
+		PreparedStatement stat = null;
+		try {
+			stat = conn.prepareStatement(DELETEALL);
+			if(stat.executeUpdate() == 0) {
+				throw new DAOException("Posible error en metodo Delete!");
+			};
+		}catch(SQLException ex) {
+			throw new DAOException("Error en SQL", ex);
+		}finally {
+			if( stat != null) {
+				try {
+					stat.close();
+				}catch(SQLException ex) {
+					throw new DAOException("Error en SQL", ex);
+				}
+			}
+		}
+		
 	} 
 	
 	
