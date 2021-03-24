@@ -8,15 +8,15 @@ public class Game {
 	private LocalDate date;
 	private int duration;
 	private int score;
-	private User user;
+	private String username;
 
-	public Game(int idGame, LocalDate date,int duration,  int score, User user) {
+	public Game(int idGame, LocalDate date,int duration,  int score, String username) {
 		super();
 		this.idGame = idGame;
 		this.date = date;
 		this.duration = duration;
 		this.score = score;
-		this.user = user;
+		this.username = username;
 	}
 
 	public synchronized int getIdGame() {
