@@ -1,4 +1,4 @@
-package com.sopa.dao.mysql;
+package com.sopa.DAO.mysql;
 
 public class SQLUserDAO {
 

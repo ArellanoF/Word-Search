@@ -9,9 +9,6 @@ public class Game {
 	private int duration;
 	private int score;
 	private User user;
-	
-	
-	
 
 	public Game(int idGame, LocalDate date,int duration,  int score, User user) {
 		super();
@@ -67,5 +64,6 @@ public class Game {
 		return "Game [idGame=" + idGame + ", date=" + date + ", duration=" + duration + ", score=" + score + ", user="
 				+ user + "]";
 	}
+
 	
 }

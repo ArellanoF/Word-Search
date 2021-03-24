@@ -1,4 +1,4 @@
-package com.sopa.dao;
+package com.sopa.DAO;
 
 import com.sopa.models.Game;
 

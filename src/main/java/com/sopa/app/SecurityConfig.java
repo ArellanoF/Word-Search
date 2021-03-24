@@ -16,7 +16,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           .and().formLogin().loginPage("/login").permitAll()
           .defaultSuccessUrl("/new-game", true)
           .failureUrl("/login?error=true");
-
   }
 
   @Override
