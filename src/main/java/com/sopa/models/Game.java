@@ -10,8 +10,6 @@ public class Game {
 	private int score;
 	private User user;
 
-	
-
 	public Game(int idGame, LocalDate date,int duration,  int score, User user) {
 		super();
 		this.idGame = idGame;
@@ -66,8 +64,6 @@ public class Game {
 		return "Game [idGame=" + idGame + ", date=" + date + ", duration=" + duration + ", score=" + score + ", user="
 				+ user + "]";
 	}
-
-
 
 	
 }

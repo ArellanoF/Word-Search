@@ -24,5 +24,9 @@ public class HomeController {
 	    public String game() {         
 	        return "game";
 	    }
+	  @RequestMapping("/all-games")
+	    public String allGames() {         
+	        return "all-games";
+	    }
 
 }

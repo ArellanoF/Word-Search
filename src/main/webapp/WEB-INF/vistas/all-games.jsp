@@ -11,10 +11,13 @@
 <body>
 	<div class="welcome">
 	<div>
-		<h1>Good Luck!</h1>
+		<h1>This are all the scores!</h1>
 	</div>
-	<button>Solve!</button>
-	<button><a href="/all-games">View scores!</button>
+	<div>
+		<h1>This are your own scores</h1>
+	</div>
+	<button><a href="/new-game">Return to create game</button>
+	<button><a href="/login">Logout</button>	
 	</div>
 
 </body>
