@@ -1,16 +1,17 @@
 package com.sopa.models;
 
-import java.time.LocalDate;
+import java.util.Date;
+
 
 public class Game {
 	
 	private int idGame;
-	private LocalDate date;
+	private Date date;
 	private int duration;
 	private int score;
 	private String username;
 
-	public Game(int idGame, LocalDate date,int duration,  int score, String username) {
+	public Game(int idGame, Date date,int duration,  int score, String username) {
 		super();
 		this.idGame = idGame;
 		this.date = date;
@@ -35,15 +36,14 @@ public class Game {
 		this.score = score;
 	}
 
-	public synchronized LocalDate getDate() {
+	
+	public Date getDate() {
 		return date;
 	}
 
-	public synchronized void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
-
-	
 
 	public synchronized int getDuration() {
 		return duration;

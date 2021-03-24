@@ -11,15 +11,11 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDate;
-
-import connection.connectionSQL;
 
 public class SQLGameDAO  implements GameDAO{
 	
-	final String INSERT= "INSERT INTO game(idGame, date, score, users, duration) VALUES (?, ?, ?, ?, ?,)";
-	final String UPDATE= "UPDATE word SET idGame = ?, date = ?, score = ?, users = ?, duration = ? WHERE idWord = ?";
+	final String INSERT= "INSERT INTO game(idGame, date, score, username, duration) VALUES (?, ?, ?, ?, ?)";
+	final String UPDATE= "UPDATE word SET idGame = ?, date = ?, score = ?, username = ?, duration = ? WHERE idWord = ?";
 	final String DELETE= "DELETE FROM game WHERE idGame = ?";
 	final String GETALL = "SELECT * FROM game";
 	final String GETONE = "SELECT * FROM game WHERE idGame = ?";
@@ -31,10 +27,11 @@ public class SQLGameDAO  implements GameDAO{
 	}
 	private Game convert(ResultSet rs) throws SQLException{
 		int idGame = rs.getInt("idGame");
-		LocalDate date = rs.getDate("date").toLocalDate();
+		Date date = rs.getDate("date");
+		int duration = rs.getInt("duration");
 		int score = rs.getInt("score");
 		String username = rs.getString("username");
-		int duration = rs.getInt("duration");
+	
 		Game game1 = new Game(idGame, date, duration, score, username);
 		game1.setIdGame(rs.getInt("idGame"));
 		return game1;
@@ -77,25 +74,111 @@ public class SQLGameDAO  implements GameDAO{
 
 	@Override
 	public List<Game> getAll() throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+		PreparedStatement stat = null;
+		ResultSet rs = null;
+		List<Game> games = new ArrayList<>();
+		try {
+			stat = conn.prepareStatement(GETALL);
+			rs = stat.executeQuery();
+			while(rs.next()) {
+				games.add(convert(rs));
+			}
+		}catch(SQLException ex) {
+			throw new DAOException("Error en SQL", ex);
+		}finally {
+			if(rs != null) {
+				try {
+					rs.close();
+				}catch(SQLException ex) {
+					new DAOException("Error en SQL", ex);
+				}
+			}
+			if(stat != null) {
+				try{
+					stat.close();
+				}catch(SQLException ex) {
+					new DAOException("Error en SQL",ex);
+				}
+			}
+		}
+		return games;
 	}
 
 	@Override
 	public void save(Game t) throws DAOException {
-		// TODO Auto-generated method stub
+		PreparedStatement stat = null;
+		try {
+			stat = conn.prepareStatement(INSERT);
+			stat.setInt(1, t.getIdGame());
+			stat.setDate(2, new Date (t.getDate().getTime()));
+			stat.setInt(3, t.getScore());
+			stat.setString(4, t.getUsername());
+			stat.setInt(5, t.getDuration());
+			
+			if(stat.executeUpdate() == 0) {
+				throw new DAOException("Posible error en metodo Insert!");
+			};
+		}catch(SQLException ex){
+			throw new DAOException("Error en SQL", ex);
+		}finally {
+			if( stat != null) {
+				try {
+					stat.close();
+				}catch(SQLException ex) {
+					throw new DAOException("Error en SQL", ex);
+				}
+			}
+		}
 		
 	}
-
+	
 	@Override
 	public void update(Game t) throws DAOException {
-		// TODO Auto-generated method stub
+		PreparedStatement stat = null;
+		try {
+			stat = conn.prepareStatement(UPDATE);
+			stat.setInt(1, t.getIdGame());
+			stat.setDate(2, new Date (t.getDate().getTime()));
+			stat.setInt(3, t.getScore());
+			stat.setString(4, t.getUsername());
+			stat.setInt(5, t.getDuration());
+			
+			if(stat.executeUpdate() == 0) {
+				throw new DAOException("Posible error en metodo Update!");
+			};
+		}catch(SQLException ex){
+			throw new DAOException("Error en SQL", ex);
+		}finally {
+			if( stat != null) {
+				try {
+					stat.close();
+				}catch(SQLException ex) {
+					throw new DAOException("Error en SQL", ex);
+				}
+			}
+		}
 		
 	}
 
 	@Override
 	public void delete(Game t) throws DAOException {
-		// TODO Auto-generated method stub
+		PreparedStatement stat = null;
+		try {
+			stat = conn.prepareStatement(DELETE);
+			if(stat.executeUpdate() == 0) {
+				throw new DAOException("Posible error en metodo Delete!");
+			};
+		}catch(SQLException ex) {
+			throw new DAOException("Error en SQL", ex);
+		}finally {
+			if( stat != null) {
+				try {
+					stat.close();
+				}catch(SQLException ex) {
+					throw new DAOException("Error en SQL", ex);
+				}
+			}
+		}
 		
 	}
 
