@@ -3,7 +3,6 @@ package com.sopa.app;
 
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -13,8 +12,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 
 import com.sopa.DAO.DAOException;
+import com.sopa.DAO.UserDAO;
 import com.sopa.DAO.WordDAO;
+import com.sopa.DAO.mysql.SQLUserDAO;
 import com.sopa.DAO.mysql.SQLWordDAO;
+import com.sopa.models.User;
 import com.sopa.models.Word;
 
 import connection.connectionSQL;
@@ -44,15 +46,20 @@ public class SopaLetras1Application {
 			// Delete all the words
 			dao.deleteAll();
 			
-			//-->User Persistence
-						
-				
+			//User persistence
+			UserDAO daoUser = new SQLUserDAO(conn);
+			User userSave = new User(3,"pep");
+			daoUser.save(userSave);
+			List<User> users = daoUser.getAll();
+			for(User user1: users) {
+				System.out.println(user1.toString());
+			}
+			
+
 		}finally {
 			if(conn != null) {
 				conn.close();
 			}
 		}
 	}
-
-
 }

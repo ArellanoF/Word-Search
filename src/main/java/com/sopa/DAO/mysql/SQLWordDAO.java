@@ -18,7 +18,7 @@ public class SQLWordDAO implements WordDAO {
 
 	final String INSERT= "INSERT INTO word(idWord, word) VALUES (?, ?)";
 	final String UPDATE= "UPDATE word SET idWord = ?, word = ? WHERE idWord = ?";
-	final String DELETE= "DELETE FROM word WHERE idWord 0 ?";
+	final String DELETE= "DELETE FROM word WHERE idWord = ?";
 	final String DELETEALL= "DELETE FROM word";
 	final String GETALL = "SELECT * FROM word";
 	final String GETONE = "SELECT * FROM word WHERE idWord = ?";
@@ -28,7 +28,7 @@ public class SQLWordDAO implements WordDAO {
 	public SQLWordDAO(Connection conn) {
 		this.conn = conn;
 	}
-
+	
 	private Word convert(ResultSet rs) throws SQLException{
 		int idWord = rs.getInt("idWord");
 		String word = rs.getString("word");
@@ -36,7 +36,7 @@ public class SQLWordDAO implements WordDAO {
 		word1.setIdWord(rs.getInt("idWord"));
 		return word1;
 	}
-	@Override
+	
 	public Word get(int id) throws DAOException {
 		PreparedStatement stat = null;
 		ResultSet rs = null;
@@ -71,7 +71,6 @@ public class SQLWordDAO implements WordDAO {
 		return word;
 	}
 
-	@Override
 	public List<Word> getAll() throws DAOException {
 		PreparedStatement stat = null;
 		ResultSet rs = null;
@@ -103,7 +102,6 @@ public class SQLWordDAO implements WordDAO {
 		return words;
 	}
 
-	@Override
 	public void save(Word t) throws DAOException {
 		PreparedStatement stat = null;
 		try {
@@ -127,7 +125,6 @@ public class SQLWordDAO implements WordDAO {
 		
 	}
 
-	@Override
 	public void update(Word t) throws DAOException {
 		PreparedStatement stat = null;
 		try {
@@ -150,7 +147,6 @@ public class SQLWordDAO implements WordDAO {
 		}
 	}
 
-	@Override
 	public void delete(Word t) throws DAOException {
 		PreparedStatement stat = null;
 		try {
@@ -172,7 +168,6 @@ public class SQLWordDAO implements WordDAO {
 		
 	}
 
-	@Override
 	public void deleteAll() throws DAOException {
 		PreparedStatement stat = null;
 		try {
