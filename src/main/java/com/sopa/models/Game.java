@@ -1,16 +1,19 @@
 package com.sopa.models;
 
-import java.time.LocalDate;
+import java.util.Date;
+
 
 public class Game {
 	
 	private int idGame;
-	private LocalDate date;
+	private Date date;
 	private int duration;
 	private int score;
 	private String username;
 
-	public Game(int idGame, LocalDate date,int duration,  int score, String username) {
+
+	public Game(int idGame, Date date,int duration,  int score, String username) {
+
 		super();
 		this.idGame = idGame;
 		this.date = date;
@@ -35,20 +38,13 @@ public class Game {
 		this.score = score;
 	}
 
-	public synchronized LocalDate getDate() {
+	
+	public Date getDate() {
 		return date;
 	}
 
-	public synchronized void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
-	}
-
-	public synchronized User getUser() {
-		return user;
-	}
-
-	public synchronized void setUser(User user) {
-		this.user = user;
 	}
 
 	public synchronized int getDuration() {
@@ -59,10 +55,18 @@ public class Game {
 		this.duration = duration;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	@Override
 	public String toString() {
-		return "Game [idGame=" + idGame + ", date=" + date + ", duration=" + duration + ", score=" + score + ", user="
-				+ user + "]";
+		return "Game [idGame=" + idGame + ", date=" + date + ", duration=" + duration + ", score=" + score
+				+ ", username=" + username + "]";
 	}
 
 	
