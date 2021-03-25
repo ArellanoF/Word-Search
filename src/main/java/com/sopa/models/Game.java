@@ -11,7 +11,9 @@ public class Game {
 	private int score;
 	private String username;
 
+
 	public Game(int idGame, Date date,int duration,  int score, String username) {
+
 		super();
 		this.idGame = idGame;
 		this.date = date;

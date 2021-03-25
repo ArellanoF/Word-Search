@@ -1,19 +1,15 @@
 package com.sopa.models;
 
-import java.util.List;
 
 public class User {
 	private int idUsername;
 	private String username;
-	private List<Game> games;
+		
 	
-	
-	
-	public User(int idUsername, String username, List<Game> games) {
+	public User(int idUsername, String username) {
 		super();
 		this.idUsername = idUsername;
 		this.username = username;
-		this.games = games;
 	}
 
 	public synchronized int getIdUsername() {
@@ -33,17 +29,10 @@ public class User {
 		this.username = username;
 	}
 
-	public synchronized List<Game> getGames() {
-		return games;
-	}
-
-	public synchronized void setGames(List<Game> games) {
-		this.games = games;
-	}
-
+	
 	@Override
 	public String toString() {
-		return "User [idUsername=" + idUsername + ", username=" + username + ", games=" + games + "]";
+		return "User [idUsername=" + idUsername + ", username=" + username + "]";
 	}
 
 
