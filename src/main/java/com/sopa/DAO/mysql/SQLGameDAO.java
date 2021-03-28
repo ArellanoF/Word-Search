@@ -14,8 +14,8 @@ import java.sql.SQLException;
 
 public class SQLGameDAO  implements GameDAO{
 	
-	final String INSERT= "INSERT INTO game(idGame, date, score, username, duration) VALUES (?, ?, ?, ?, ?)";
-	final String UPDATE= "UPDATE word SET idGame = ?, date = ?, score = ?, username = ?, duration = ? WHERE idWord = ?";
+	final String INSERT= "INSERT INTO game(idGame, date, score, duration, username) VALUES (?, ?, ?, ?, ?)";
+	final String UPDATE= "UPDATE word SET idGame = ?, date = ?, score = ?, duration = ?, username = ?,  WHERE idWord = ?";
 	final String DELETE= "DELETE FROM game WHERE idGame = ?";
 	final String GETALL = "SELECT * FROM game";
 	final String GETONE = "SELECT * FROM game WHERE idGame = ?";
@@ -112,8 +112,8 @@ public class SQLGameDAO  implements GameDAO{
 			stat.setInt(1, t.getIdGame());
 			stat.setDate(2, new Date (t.getDate().getTime()));
 			stat.setInt(3, t.getScore());
-			stat.setString(4, t.getUsername());
-			stat.setInt(5, t.getDuration());
+			stat.setInt(4, t.getDuration());
+			stat.setString(5, t.getUsername());
 			
 			if(stat.executeUpdate() == 0) {
 				throw new DAOException("Posible error en metodo Insert!");

@@ -5,11 +5,7 @@ package com.sopa.app;
 import java.sql.Connection;
 
 
-import java.sql.DriverManager;
-
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -20,18 +16,22 @@ import org.springframework.context.annotation.Configuration;
 
 import com.sopa.DAO.DAOException;
 
-import com.sopa.DAO.GameDAO;
-import com.sopa.DAO.WordDAO;
-import com.sopa.DAO.mysql.SQLGameDAO;
-import com.sopa.DAO.mysql.SQLWordDAO;
-import com.sopa.models.Game;
-import com.sopa.DAO.UserDAO;
-import com.sopa.DAO.WordDAO;
-import com.sopa.DAO.mysql.SQLUserDAO;
-import com.sopa.DAO.mysql.SQLWordDAO;
+//MODELS
 import com.sopa.models.User;
 import com.sopa.models.Word;
+import com.sopa.models.Game;
 
+//DAO
+import com.sopa.DAO.GameDAO;
+import com.sopa.DAO.WordDAO;
+import com.sopa.DAO.UserDAO;
+
+//SQL DAO
+import com.sopa.DAO.mysql.SQLUserDAO;
+import com.sopa.DAO.mysql.SQLGameDAO;
+import com.sopa.DAO.mysql.SQLWordDAO;
+
+//CONNECTION
 import connection.connectionSQL;
 
 
@@ -46,6 +46,7 @@ public class SopaLetras1Application {
 		connectionSQL connection = new connectionSQL();
 		try {
 			conn = connection.connect();
+			
 			// -->Word Persistence
 			WordDAO dao = new SQLWordDAO(conn);
 			Word wordSave = new Word(3, "hola");
@@ -56,15 +57,9 @@ public class SopaLetras1Application {
 			for(Word word1: words) {
 				System.out.println(word1.toString());
 			}
-			// Delete all the words
-			dao.deleteAll();
-
-
 
 			// -->Game Persistence
-			DateFormat dateFormat = new SimpleDateFormat("dd:mm:yyyy");
 			Date date = new Date();
-			String date1 = dateFormat.format(date);
 			GameDAO gameDao = new SQLGameDAO(conn);
 			Game gameSave = new Game(3,date,55,120,"Paco");
 			// Insert 1 game
@@ -75,7 +70,6 @@ public class SopaLetras1Application {
 			System.out.println(game1.toString());
 			}
 				
-
 			
 			//User persistence
 			UserDAO daoUser = new SQLUserDAO(conn);
