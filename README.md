@@ -10,7 +10,7 @@ Proyect (ICC02_P7) **Aplicación backend con tecnologia Java en servidores de ap
 #### TOOLS :hammer_and_wrench:
 ***
 - [Eclipse](https://www.eclipse.org) - IDE for Enterprise Java Developers
-- [JDBC](https://docs.microsoft.com/es-es/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15) - Java SE Development 
+- [JDBC](https://docs.microsoft.com/es-es/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15) - API that allows the execution of operations on databases from the Java programming language
 - [JDK](https://www.oracle.com/es/java/technologies/javase-downloads.html) - Java SE Development 
 - [Maven](https://maven.apache.org/) - Software tool for the management and construction of Java projects
 - [Apache Tomcat](http://tomcat.apache.org/) - Server Aplication
