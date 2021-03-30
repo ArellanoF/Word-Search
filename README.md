@@ -20,9 +20,9 @@ Proyect (ICC02_P7) **Aplicación backend con tecnologia Java en servidores de ap
 
 #### AUTHORS :monkey:
 ***
-- Héctor Esquerdo Valverde
-- Gerard Márquez Rodríguez
-- Toni Estirado Sanchez
-- Francesc Arellano Cachopo
+- __Héctor Esquerdo Valverde__
+- __Gerard Márquez Rodríguez__
+- __Toni Estirado Sanchez__
+- __Francesc Arellano Cachopo__
 #### WITH GRATITUD :tada:
 ***
