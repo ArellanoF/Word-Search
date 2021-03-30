@@ -115,8 +115,7 @@ public class SQLWordDAO implements WordDAO {
 					throw new DAOException("Error en SQL", ex);
 				}
 			}
-		}
-		
+		}	
 	}
 
 	public void update(Word t) throws DAOException {
@@ -157,8 +156,7 @@ public class SQLWordDAO implements WordDAO {
 					throw new DAOException("Error en SQL", ex);
 				}
 			}
-		}
-		
+		}	
 	}
 
 	public void deleteAll() throws DAOException {
@@ -178,9 +176,6 @@ public class SQLWordDAO implements WordDAO {
 					throw new DAOException("Error en SQL", ex);
 				}
 			}
-		}
-		
+		}	
 	} 
-	
-	
 }

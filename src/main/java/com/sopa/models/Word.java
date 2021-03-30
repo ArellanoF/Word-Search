@@ -4,8 +4,6 @@ public class Word {
 	
 	private String word;
 	
-	
-
 	public Word(String word) {
 		super();
 		this.word = word;
@@ -23,5 +21,4 @@ public class Word {
 	public String toString() {
 		return "Word [word=" + word + "]";
 	}
-	
 }
