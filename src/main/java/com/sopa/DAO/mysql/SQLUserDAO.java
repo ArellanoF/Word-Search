@@ -13,8 +13,8 @@ import com.sopa.models.User;
 
 public class SQLUserDAO implements UserDAO{
 	
-	final String INSERT= "INSERT INTO users(idUsername, username) VALUES (?, ?)";
-	final String UPDATE= "UPDATE users SET idUsername = ?, username = ? WHERE idUsername = ?";
+	final String INSERT= "INSERT INTO users (username) VALUES (?)";
+	final String UPDATE= "UPDATE users SET username = ? WHERE idUsername = ?";
 	final String DELETE= "DELETE FROM users WHERE idUsername = ?";
 	final String DELETEALL= "DELETE FROM users";
 	final String GETALL = "SELECT * FROM users";
@@ -27,14 +27,12 @@ private Connection conn;
 	}
 
 	private User convert(ResultSet rs) throws SQLException{
-		int idUsername = rs.getInt("idUsername");
 		String username = rs.getString("username");
-		User user1 = new User(idUsername, username);
-		user1.setIdUsername(rs.getInt("idUsername"));
+		User user1 = new User(username);
 		return user1;
 	}
 	
-	
+
 	public User get(int id) throws DAOException {
 		PreparedStatement stat = null;
 		ResultSet rs = null;
@@ -104,8 +102,7 @@ private Connection conn;
 		PreparedStatement stat = null;
 		try {
 			stat = conn.prepareStatement(INSERT);
-			stat.setInt(1, t.getIdUsername());
-			stat.setString(2, t.getUsername());
+			stat.setString(1, t.getUsername());
 			if(stat.executeUpdate() == 0) {
 				throw new DAOException("Posible error en metodo Update!");
 			};
@@ -127,8 +124,7 @@ private Connection conn;
 		PreparedStatement stat = null;
 		try {
 			stat = conn.prepareStatement(UPDATE);
-			stat.setInt(1, t.getIdUsername());
-			stat.setString(2, t.getUsername());
+			stat.setString(1, t.getUsername());
 			if(stat.executeUpdate() == 0) {
 				throw new DAOException("Posible error en metodo Update!");
 			};
