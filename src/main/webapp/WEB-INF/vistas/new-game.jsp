@@ -15,7 +15,7 @@
 		<h1>Create a new Game!</h1>
 	</div>
 	<div>
-		<form id="newgame" action="new-game" method="post">
+		<form method="post" modelAttribute="newgame">
 			<div class="username">
 				<label>Username: </label>
 				<input name = "user"/>
@@ -27,8 +27,7 @@
 			<input type="text" name ="word3"/>
 			<input type="text" name ="word4"/>
 			<input type="text" name ="word5"/>
-			<button type="submit">Create</button>
-			<button><a href="/game">Play</a></button>
+			<button type="submit">Play</button>
 		</div>	
 		</form>
 	</div>

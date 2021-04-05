@@ -3,9 +3,13 @@ package com.sopa.app;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.sopa.DAO.DAOException;
 import com.sopa.DAO.UserDAO;
@@ -19,9 +23,12 @@ import com.sopa.models.Word;
 import connection.connectionSQL;
 
 @Controller
+@RequestMapping("/new-game")
+@SessionAttributes("newgame")
+
 public class NewGameController {
-	  @RequestMapping(value = "/new-game", method = RequestMethod.POST)
-	    public void gameData(NewGame newGame) throws SQLException, DAOException {         
+	  @RequestMapping(method = RequestMethod.POST)
+	    public RedirectView gameData(NewGame newGame) throws SQLException, DAOException {         
 		  System.out.println("Username= " + newGame.getUser());
 		  User newUser = new User(newGame.getUser());
 		  Word word1 = new Word(newGame.getWord1());
@@ -51,12 +58,16 @@ public class NewGameController {
 				if(word5.getWord() != "") {
 					daoWord.save(word5);
 				}
+				
 			}
 			finally{
 				if(conn != null) {
 					conn.close();
+					return new RedirectView("/game");
 				}
-			}  
+			}
+			return null;  
 	    }
 
 }
+
