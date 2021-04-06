@@ -20,6 +20,8 @@ Mysql database where we store the different words and player scores
 
 #### RUNNING THE PROTOTYPE :computer:
 ***
+- git clone this repo
+- open browser on http://localhost:3306/
 
 #### AUTHORS :monkey:
 ***
