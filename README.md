@@ -6,8 +6,6 @@ Proyect (ICC02_P7) **Aplicación backend con tecnologia Java en servidores de ap
 "__Sopla Letras__" Game, developed in Java, with player authentication in LDAP
 
 Mysql database where we store the different words and player scores
-#### REQUIREMENTS :computer:
-***
 
 #### TOOLS :hammer_and_wrench:
 ***
@@ -19,6 +17,9 @@ Mysql database where we store the different words and player scores
 - [Open LDAP](https://www.openldap.org/) - Independent communication protocol
 - [MySQL Workbench](https://www.mysql.com/products/workbench/) - Visual database design tool that integrates software development, database administration, database design, management and maintenance for the MySQL database system
 - [Bootstrap](https://getbootstrap.com/) - Cross-platform library or open source toolkit for website design and web applications
+
+#### RUNNING THE PROTOTYPE :computer:
+***
 
 #### AUTHORS :monkey:
 ***
