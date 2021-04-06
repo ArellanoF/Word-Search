@@ -20,15 +20,18 @@ Mysql database where we store the different words and player scores
 
 #### RUNNING THE PROTOTYPE :computer:
 ***
-- git clone this repo
-- open browser on http://localhost:3306/
+- Git clone this repo
+- Import Dump database
+- Run LDAP Server
+- Run Apache Server (Mysql)
+- Open browser on http://localhost:8080/
 
 #### AUTHORS :monkey:
 ***
-- __Héctor Esquerdo Valverde__
-- __Gerard Márquez Rodríguez__
-- __Toni Estirado Sanchez__
-- __Francesc Arellano Cachopo__
+- __Héctor Esquerdo Valverde__            🐛:[Git account](https://github.com/hectoresquerdo) 🐛:
+- __Gerard Márquez Rodríguez__            🐛:[Git account](https://github.com/gmarquezro) 🐛:
+- __Toni Estirado Sanchez__               🐛:[Git account](https://github.com/testirado) 🐛:
+- __Francesc Arellano Cachopo__           🐛:[Git account](https://github.com/aretek88) 🐛:
 #### WITH GRATITUD :tada:
 ***
 :hammer: :wrench::hammer: :wrench: To [Paco Gómez Arnal](https://www.youtube.com/c/PacoGomez), UOC consultant, and our guide in this project :hammer: :wrench::hammer: :wrench:
