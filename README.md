@@ -3,7 +3,7 @@ Proyect (ICC02_P7) **Aplicación backend con tecnologia Java en servidores de ap
 
 ## INTRODUCTION :rocket:
 ***
-"__Sopla Letras__" Game, developed in Java, player authentication in LDAP
+"__Sopla Letras__" Game, developed in Java, with player authentication in LDAP
 
 Mysql database where we store the different words and player scores
 #### REQUIREMENTS :computer:
