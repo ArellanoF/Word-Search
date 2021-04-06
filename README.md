@@ -31,3 +31,6 @@ Mysql database where we store the different words and player scores
 - __Francesc Arellano Cachopo__
 #### WITH GRATITUD :tada:
 ***
+:hammer: :wrench::hammer: :wrench: To [Paco Gómez Arnal](https://www.youtube.com/c/PacoGomez), UOC consultant, and our guide in this project :hammer: :wrench::hammer: :wrench:
+
+
