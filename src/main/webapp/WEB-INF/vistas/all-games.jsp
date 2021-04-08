@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>New Game</title>
+<title>Score</title>
 <link href="css/newgame.css" rel="stylesheet" type="text/css">
  
 </head>
