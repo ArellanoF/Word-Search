@@ -19,6 +19,7 @@ public class SQLUserDAO implements UserDAO{
 	final String DELETEALL= "DELETE FROM users";
 	final String GETALL = "SELECT * FROM users";
 	final String GETONE = "SELECT * FROM users WHERE idUsername = ?";
+	final String GETLAST = "SELECT * FROM users ORDER BY idUsername DESC LIMIT 1";
 	
 private Connection conn;
 	
@@ -159,6 +160,64 @@ private Connection conn;
 				}
 			}
 		}
+		
+	}
+
+
+	@Override
+	public User getLast() throws DAOException {
+		PreparedStatement stat = null;
+		ResultSet rs = null;
+		User user = null;
+		try {
+			stat = conn.prepareStatement(GETLAST);
+			rs = stat.executeQuery();
+			if(rs.next()) {
+				user = convert(rs);
+				System.out.println(user);
+			}else {
+				throw new DAOException("No se ha encontrado esa palabra");
+			}
+		}catch(SQLException ex) {
+			throw new DAOException("Error en SQL", ex);
+		}finally {
+			if(rs != null) {
+				try {
+					rs.close();
+				}catch(SQLException ex) {
+					new DAOException("Error en SQL", ex);
+				}
+			}
+			if(stat != null) {
+				try{
+					stat.close();
+				}catch(SQLException ex) {
+					new DAOException("Error en SQL",ex);
+				}
+			}
+		}
+		return user;
+	}
+
+	@Override
+	public void deleteAll() throws DAOException {
+		PreparedStatement stat = null;
+		try {
+			stat = conn.prepareStatement(DELETEALL);
+			if(stat.executeUpdate() == 0) {
+				throw new DAOException("Posible error en metodo Delete!");
+			};
+		}catch(SQLException ex) {
+			throw new DAOException("Error en SQL", ex);
+		}finally {
+			if( stat != null) {
+				try {
+					stat.close();
+				}catch(SQLException ex) {
+					throw new DAOException("Error en SQL", ex);
+				}
+			}
+		}	
 		
 	}
 

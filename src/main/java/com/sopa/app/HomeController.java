@@ -45,25 +45,7 @@ public class HomeController {
 	        return "new-game";
 	    }
 	  @RequestMapping("/game")
-	    public String Game(ModelMap model) throws SQLException, DAOException {         
-	  	  Connection conn = null;
-			connectionSQL connection = new connectionSQL();
-			try {
-				conn = connection.connect();
-				WordDAO daoWord = new SQLWordDAO(conn);
-				List<Word> lista = daoWord.getAll();
-				Collection<String> words = CollectionUtils.collect(lista, TransformerUtils.invokerTransformer("getWord"));
-				for(String string : words ) {
-		            System.out.println(string);
-		        }
-				String palabras[] = (String[]) words.toArray(new String[0]);
-				model.addAttribute("palabras", palabras);	
-			}
-			finally{
-				if(conn != null) {
-					conn.close();
-				}
-			} 
+	    public String game() {
 			return "game";
 	    } 
 	  @RequestMapping("/all-games")

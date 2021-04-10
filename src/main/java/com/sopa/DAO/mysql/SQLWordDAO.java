@@ -177,5 +177,14 @@ public class SQLWordDAO implements WordDAO {
 				}
 			}
 		}	
-	} 
+	}
+
+	
+
+	@Override
+	public Word getLast() throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -7,18 +7,18 @@ import com.sopa.DAO.DAOException;
 import com.sopa.DAO.GameDAO;
 import com.sopa.models.Game;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class SQLGameDAO  implements GameDAO{
 	
-	final String INSERT= "INSERT INTO game(idGame, date, score, duration, username) VALUES (?, ?, ?, ?, ?)";
-	final String UPDATE= "UPDATE word SET idGame = ?, date = ?, score = ?, duration = ?, username = ?,  WHERE idWord = ?";
+	final String INSERT= "INSERT INTO game(gameDate, duration, score, username) VALUES (?, ?, ?, ?)";
+	final String UPDATE= "UPDATE game SET gameDate = ?, score = ?, duration = ?, username = ?,  WHERE idGame = ?";
 	final String DELETE= "DELETE FROM game WHERE idGame = ?";
-	final String GETALL = "SELECT * FROM game";
+	final String GETALL = "SELECT * FROM game ORDER BY score DESC, duration ASC LIMIT 10";
 	final String GETONE = "SELECT * FROM game WHERE idGame = ?";
+	
 	
 	private Connection conn;
 	
@@ -26,14 +26,11 @@ public class SQLGameDAO  implements GameDAO{
 		this.conn = conn;
 	}
 	private Game convert(ResultSet rs) throws SQLException{
-		int idGame = rs.getInt("idGame");
-		Date date = rs.getDate("date");
+		String date = rs.getString("gameDate");
 		int duration = rs.getInt("duration");
 		int score = rs.getInt("score");
 		String username = rs.getString("username");
-	
-		Game game1 = new Game(idGame, date, duration, score, username);
-		game1.setIdGame(rs.getInt("idGame"));
+		Game game1 = new Game(date, duration, score, username);
 		return game1;
 		}
 
@@ -104,16 +101,14 @@ public class SQLGameDAO  implements GameDAO{
 		return games;
 	}
 
-	@Override
 	public void save(Game t) throws DAOException {
 		PreparedStatement stat = null;
 		try {
 			stat = conn.prepareStatement(INSERT);
-			stat.setInt(1, t.getIdGame());
-			stat.setDate(2, new Date (t.getDate().getTime()));
+			stat.setString(1, t.getGameDate());
+			stat.setInt(2, t.getDuration());
 			stat.setInt(3, t.getScore());
-			stat.setInt(4, t.getDuration());
-			stat.setString(5, t.getUsername());
+			stat.setString(4, t.getUsername());
 			
 			if(stat.executeUpdate() == 0) {
 				throw new DAOException("Posible error en metodo Insert!");
@@ -137,11 +132,10 @@ public class SQLGameDAO  implements GameDAO{
 		PreparedStatement stat = null;
 		try {
 			stat = conn.prepareStatement(UPDATE);
-			stat.setInt(1, t.getIdGame());
-			stat.setDate(2, new Date (t.getDate().getTime()));
-			stat.setInt(3, t.getScore());
-			stat.setString(4, t.getUsername());
-			stat.setInt(5, t.getDuration());
+			stat.setString(1, t.getGameDate());
+			stat.setInt(2, t.getScore());
+			stat.setString(3, t.getUsername());
+			stat.setInt(4, t.getDuration());
 			
 			if(stat.executeUpdate() == 0) {
 				throw new DAOException("Posible error en metodo Update!");
@@ -179,6 +173,18 @@ public class SQLGameDAO  implements GameDAO{
 				}
 			}
 		}
+		
+	}
+	
+	@Override
+	public Game getLast() throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteAll() throws DAOException {
+		// TODO Auto-generated method stub
 		
 	}
 

@@ -15,33 +15,44 @@
     <script>
 	var inicio=0;
 	var timeout=0;
- 
-	function empezarDetener(elemento)
+ 	var actual=0;
+ 	var points = 5000;
+ 	
+	function diferencia(inicio,actual){
+		var tiempo = new Date(actual-inicio);
+		var seconds = tiempo.getTime() / 1000;
+		seconds = Math.floor(seconds);
+		console.log(seconds);
+		points = points - seconds;
+		console.log(points);
+		if (points <= 0){
+			points = 1;
+		}
+		else if(points >= 4970){
+			points = 5000;
+		}
+		document.getElementById("score").value = points;
+		document.getElementById("duration").value = seconds;
+		return seconds,points;
+	}
+	
+	function empezarDetener()
 	{
 		if(timeout==0)
 		{
-			// empezar el cronometro
- 
-			elemento.value="Detener";
- 
 			// Obtenemos el valor actual
 			inicio=vuelta=new Date().getTime();
  
 			// iniciamos el proceso
 			funcionando();
-		}else{
-			// detemer el cronometro
- 
-			elemento.value="Empezar";
-			clearTimeout(timeout);
-			timeout=0;
+		
 		}
 	}
  
 	function funcionando()
 	{
 		// obteneos la fecha actual
-		var actual = new Date().getTime();
+		actual = new Date().getTime();
  
 		// obtenemos la diferencia entre la fecha actual y la de inicio
 		var diff=new Date(actual-inicio);
@@ -64,21 +75,22 @@
 	.crono_wrapper {text-align:center;width:200px;}
 	</style>
 </head>
-<body>
-
+<body onload="empezarDetener()">
+	
     <div id='juego'></div>
     <div id='Palabras'></div>
-    
+   
     <div>
-    <a href="/all-games"><button id='solve'>Resolver</button>
-    </a>
+    
     </div>
  	<div class="crono_wrapper">
 	<h2 id='crono'>00:00:00</h2>
-	<input type="button" value="Empezar" onclick="empezarDetener(this);">
 	</div>
- 	
- 	
+	<form method="post" modelAttribute="game">
+		<input type="hidden" id="score" name="score">
+ 		<input type="hidden" id="duration" name="duration">
+ 		<button type="submit" id='solve' onclick="diferencia(inicio,actual)">Resolver</button>
+	</form>
  	
     <script>
     var words = [];
