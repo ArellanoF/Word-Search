@@ -70,17 +70,17 @@ public class GameController {
 			User userGame = daoUser.getLast();
 			String nameGame = userGame.getUsername();
 			daoUser.deleteAll();
-			System.out.println(nameGame);
+		
 			int duration = game.getDuration();
-			System.out.println(duration);
+		
 			int score = game.getScore();
-			System.out.println(score);
+	
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy ");  
 	   	    LocalDateTime now = LocalDateTime.now();  
 	   	    String gameDate = dtf.format(now); 
-	   	    System.out.println(gameDate);
+
 	   	    Game lastGame = new Game(gameDate, duration, score, nameGame);
-	   	    System.out.print(lastGame);
+
 	   	    GameDAO daoGame = new SQLGameDAO(conn);
 		    daoGame.save(lastGame);
 		}
