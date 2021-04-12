@@ -13,12 +13,13 @@ import com.sopa.models.User;
 
 public class SQLUserDAO implements UserDAO{
 	
-	final String INSERT= "INSERT INTO users(idUsername, username) VALUES (?, ?)";
-	final String UPDATE= "UPDATE users SET idUsername = ?, username = ? WHERE idUsername = ?";
+	final String INSERT= "INSERT INTO users (username) VALUES (?)";
+	final String UPDATE= "UPDATE users SET username = ? WHERE idUsername = ?";
 	final String DELETE= "DELETE FROM users WHERE idUsername = ?";
 	final String DELETEALL= "DELETE FROM users";
 	final String GETALL = "SELECT * FROM users";
 	final String GETONE = "SELECT * FROM users WHERE idUsername = ?";
+	final String GETLAST = "SELECT * FROM users ORDER BY idUsername DESC LIMIT 1";
 	
 private Connection conn;
 	
@@ -27,14 +28,12 @@ private Connection conn;
 	}
 
 	private User convert(ResultSet rs) throws SQLException{
-		int idUsername = rs.getInt("idUsername");
 		String username = rs.getString("username");
-		User user1 = new User(idUsername, username);
-		user1.setIdUsername(rs.getInt("idUsername"));
+		User user1 = new User(username);
 		return user1;
 	}
 	
-	
+
 	public User get(int id) throws DAOException {
 		PreparedStatement stat = null;
 		ResultSet rs = null;
@@ -104,8 +103,7 @@ private Connection conn;
 		PreparedStatement stat = null;
 		try {
 			stat = conn.prepareStatement(INSERT);
-			stat.setInt(1, t.getIdUsername());
-			stat.setString(2, t.getUsername());
+			stat.setString(1, t.getUsername());
 			if(stat.executeUpdate() == 0) {
 				throw new DAOException("Posible error en metodo Update!");
 			};
@@ -127,8 +125,7 @@ private Connection conn;
 		PreparedStatement stat = null;
 		try {
 			stat = conn.prepareStatement(UPDATE);
-			stat.setInt(1, t.getIdUsername());
-			stat.setString(2, t.getUsername());
+			stat.setString(1, t.getUsername());
 			if(stat.executeUpdate() == 0) {
 				throw new DAOException("Posible error en metodo Update!");
 			};
@@ -163,6 +160,64 @@ private Connection conn;
 				}
 			}
 		}
+		
+	}
+
+
+	@Override
+	public User getLast() throws DAOException {
+		PreparedStatement stat = null;
+		ResultSet rs = null;
+		User user = null;
+		try {
+			stat = conn.prepareStatement(GETLAST);
+			rs = stat.executeQuery();
+			if(rs.next()) {
+				user = convert(rs);
+				System.out.println(user);
+			}else {
+				throw new DAOException("No se ha encontrado esa palabra");
+			}
+		}catch(SQLException ex) {
+			throw new DAOException("Error en SQL", ex);
+		}finally {
+			if(rs != null) {
+				try {
+					rs.close();
+				}catch(SQLException ex) {
+					new DAOException("Error en SQL", ex);
+				}
+			}
+			if(stat != null) {
+				try{
+					stat.close();
+				}catch(SQLException ex) {
+					new DAOException("Error en SQL",ex);
+				}
+			}
+		}
+		return user;
+	}
+
+	@Override
+	public void deleteAll() throws DAOException {
+		PreparedStatement stat = null;
+		try {
+			stat = conn.prepareStatement(DELETEALL);
+			if(stat.executeUpdate() == 0) {
+				throw new DAOException("Posible error en metodo Delete!");
+			};
+		}catch(SQLException ex) {
+			throw new DAOException("Error en SQL", ex);
+		}finally {
+			if( stat != null) {
+				try {
+					stat.close();
+				}catch(SQLException ex) {
+					throw new DAOException("Error en SQL", ex);
+				}
+			}
+		}	
 		
 	}
 

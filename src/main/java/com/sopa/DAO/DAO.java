@@ -13,5 +13,9 @@ public interface DAO<T>{
     void update(T t) throws DAOException;
 
     void delete(T t) throws DAOException;
-
+    
+    void deleteAll() throws DAOException;
+    
+    T getLast() throws DAOException;
+    
 }
