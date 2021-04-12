@@ -2,8 +2,6 @@ package com.sopa.app;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -15,13 +13,9 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.sopa.DAO.DAOException;
 import com.sopa.DAO.GameDAO;
-import com.sopa.DAO.UserDAO;
-import com.sopa.DAO.WordDAO;
 import com.sopa.DAO.mysql.SQLGameDAO;
-import com.sopa.DAO.mysql.SQLUserDAO;
-import com.sopa.DAO.mysql.SQLWordDAO;
 import com.sopa.models.Game;
-import com.sopa.models.User;
+
 
 import connection.connectionSQL;
 

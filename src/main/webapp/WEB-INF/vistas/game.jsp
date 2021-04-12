@@ -22,9 +22,7 @@
 		var tiempo = new Date(actual-inicio);
 		var seconds = tiempo.getTime() / 1000;
 		seconds = Math.floor(seconds);
-		console.log(seconds);
 		points = points - seconds;
-		console.log(points);
 		if (points <= 0){
 			points = 1;
 		}
