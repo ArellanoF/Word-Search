@@ -7,6 +7,8 @@ Proyect (ICC02_P7) **Aplicación backend con tecnologia Java en servidores de ap
 
 Mysql database where we store the different words and player scores
 
+## USER GUIDE :clipboard:
+
 #### TOOLS :hammer_and_wrench:
 ***
 - [Eclipse](https://www.eclipse.org) - IDE for Enterprise Java Developers
