@@ -55,8 +55,8 @@ To play again, just press the NEW GAME button again.
 ***
 - Git clone this repo
 - Import Dump database
-- Run Spring Boot Application
 - Run Apache Server (Mysql)
+- Run Spring Boot Application
 - Open browser on http://localhost:8080/
 
 #### AUTHORS :monkey:
