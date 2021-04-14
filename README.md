@@ -14,6 +14,10 @@ To access the application we must enter our LDAP server username and password co
 Once we have entered the application, it will take us to the main screen, where we must enter the words we want to play with, this screen allows us to start the game by clicking on the Play button.
 
 ![Home](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/home.png)
+
+When you click on the play button, the application shows the game window, where we can see the alphabet soup and on the right a column with the words to find.
+![Home](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/play.png)
+
 #### TOOLS :hammer_and_wrench:
 ***
 - [Eclipse](https://www.eclipse.org) - IDE for Enterprise Java Developers
