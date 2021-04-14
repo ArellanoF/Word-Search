@@ -15,8 +15,13 @@ Once we have entered the application, it will take us to the main screen, where 
 
 ![Home](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/home.png)
 
-When you click on the play button, the application shows the game window, where we can see the alphabet soup and on the right a column with the words to find.
-![Home](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/play.png)
+When you click on the play button, the application shows the game window, where we can see the alphabet soup and on the right a column with the words to find
+
+![Play](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/play.png)
+
+When we find a word, we position ourselves with the mouse on the first letter of the word and by pressing the right mouse button we will drag until all the letters that compose it are selected, while the selection is made, the letters are shown in orange
+
+![Play](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/orange.png)
 
 #### TOOLS :hammer_and_wrench:
 ***
