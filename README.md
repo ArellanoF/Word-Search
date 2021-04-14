@@ -21,8 +21,19 @@ When you click on the play button, the application shows the game window, where 
 
 When we find a word, we position ourselves with the mouse on the first letter of the word and by pressing the right mouse button we will drag until all the letters that compose it are selected, while the selection is made, the letters are shown in orange
 
-![Play](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/orange.png)
+![Orange](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/orange.png)
 
+At the end of the selection, if done correctly, the word will turn blue and will be crossed out from the right column
+
+![Blue](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/blue.png)
+
+If you find all of them, the board appears with a green background and the words found highlighted in white
+
+![Green](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/green.png)
+
+Once all the words have been found, we press the solve button, a table with the scores will appear
+
+![Finish](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/finish.png)
 #### TOOLS :hammer_and_wrench:
 ***
 - [Eclipse](https://www.eclipse.org) - IDE for Enterprise Java Developers
