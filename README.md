@@ -34,6 +34,8 @@ If you find all of them, the board appears with a green background and the words
 Once all the words have been found, we press the solve button, a table with the scores will appear
 
 ![Finish](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/finish.png)
+
+To play again, just press the NEW GAME button again.
 #### TOOLS :hammer_and_wrench:
 ***
 - [Eclipse](https://www.eclipse.org) - IDE for Enterprise Java Developers
