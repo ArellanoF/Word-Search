@@ -6,6 +6,7 @@ Proyect (ICC02_P7) **Aplicación backend con tecnologia Java en servidores de ap
 "__Sopa Letras__" Game, developed in Java, with player authentication in LDAP
 
 Mysql database where we store the different words and player scores
+## VIDEO PRESENTATION :movie_camera:
 
 ## USER GUIDE :clipboard:
 To access the application we must enter our LDAP server username and password configured in (ldap-data.ldif file)
