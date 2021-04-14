@@ -10,6 +10,9 @@ Mysql database where we store the different words and player scores
 ## USER GUIDE :clipboard:
 To access the application we must enter our LDAP server username and password configured in (ldap-data.ldif file)
 ![Login](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/login.png)
+
+Once we have entered the application, it will take us to the main screen, where we must enter the words we want to play with, this screen allows us to start the game by clicking on the Play button.
+![Home](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/home.png)
 #### TOOLS :hammer_and_wrench:
 ***
 - [Eclipse](https://www.eclipse.org) - IDE for Enterprise Java Developers
