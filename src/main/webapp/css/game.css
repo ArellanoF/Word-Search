@@ -1,0 +1,63 @@
+body{
+	font-family:sans-serif;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	margin: 12em;
+}
+.container{
+	font-family:sans-serif;
+	background-color: grey;
+	border:none;
+	border-radius: 10px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	width: 50em;
+}
+.footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	
+	border: none;
+	background-color: #cccccc;
+	width: 18em;
+	height: 6em;
+	
+}
+.words{
+	width: 11em !important;
+	padding: 10px;
+	height: 10em;
+	border:none;
+	border-radius: 10px;
+	background-color: #ddf0df;
+	margin-top: 2em;
+	margin-left: 4em;
+	margin-right:0;
+	-webkit-box-shadow: 4px 2px 15px 1px rgba(0,0,0,0.87); 
+	box-shadow: 4px 2px 15px 1px rgba(0,0,0,0.87);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+
+}
+.btnSolve{
+	margin: 10px;
+	height: 2em;
+	border-radius: 5px;
+	background-color: black;
+	color:white;
+	font-weight: bold;
+	font-style:italic;
+	font-size:19px;
+	outline:none;
+}

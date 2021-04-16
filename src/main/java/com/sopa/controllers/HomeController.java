@@ -1,8 +1,14 @@
-package com.sopa.app;
+package com.sopa.controllers;
+
+
+
 
 
 import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.RequestMapping;
+
+
 
 
 @Controller
@@ -25,9 +31,9 @@ public class HomeController {
 	        return "new-game";
 	    }
 	  @RequestMapping("/game")
-	    public String game() {         
-	        return "game";
-	    }
+	    public String game() {
+			return "game";
+	    } 
 	  @RequestMapping("/all-games")
 	    public String allGames() {         
 	        return "all-games";

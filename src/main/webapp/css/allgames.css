@@ -1,0 +1,31 @@
+body{
+	font-family:sans-serif;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+.welcome{
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	align-content:center;
+	width: 30em;
+	height: 23em;
+	background-color:#acb0ad; 
+	margin-top:7%;
+	border-radius: 10px;
+	padding: 25px;
+}
+.btnNewGame{
+	margin: 10px;
+	height: 2em;
+	border-radius: 5px;
+	background-color: black;
+	color:white;
+	font-weight: bold;
+	font-style:italic;
+	font-size:19px;
+	outline:none;
+}
