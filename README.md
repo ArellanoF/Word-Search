@@ -44,6 +44,7 @@ To play again, just press the NEW GAME button again.
 - [Eclipse](https://www.eclipse.org) - IDE for Enterprise Java Developers
 - [Spring Boot](https://spring.io/projects/spring-boot) - Spring Framework is an application framework and inversion of control container for the Java platform
 - [JDBC](https://docs.microsoft.com/es-es/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15) - API that allows the execution of operations on databases from the Java programming language
+- [JPA](https://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/jpa.repositories.html) - JPA is a Jakarta EE application programming interface specification that describes the management of relational data in enterprise Java applications.
 - [JDK](https://www.oracle.com/es/java/technologies/javase-downloads.html) - Java SE Development 
 - [Maven](https://maven.apache.org/) - Software tool for the management and construction of Java projects
 - [Apache Tomcat](http://tomcat.apache.org/) - Server Aplication
