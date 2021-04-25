@@ -9,8 +9,9 @@ Mysql database where we store the different words and player scores
 ## VIDEO PRESENTATION :movie_camera:
 ***
 - [YouTube](https://www.youtube.com/watch?v=y25fAudDEmY)
-## EJB :clipboard:
+## EJB :pushpin:
 ***
+- [PDF](https://drive.google.com/file/d/1ENRD7fDOa08A30JiwoPUdiKb62pYPPad/view?usp=sharing)
 ## USER GUIDE :clipboard:
 ***
 To access the application we must enter our LDAP server username and password configured in (ldap-data.ldif file)
@@ -41,6 +42,9 @@ Once all the words have been found, we press the solve button, a table with the 
 ![Finish](https://github.com/hectoresquerdo/BACK-EE-NDS/blob/master/images/finish.png)
 
 To play again, just press the NEW GAME button again.
+## DATABASE :floppy_disk:
+***
+- [DUMP SQL](https://drive.google.com/file/d/1_m2OTrDqBTJsPT7TknIsdDTbWMqMGWRL/view?usp=sharing)
 #### TOOLS :hammer_and_wrench:
 ***
 - [Eclipse](https://www.eclipse.org) - IDE for Enterprise Java Developers
